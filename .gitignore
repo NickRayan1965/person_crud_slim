@@ -1,0 +1,34 @@
+# Dependencias de Composer
+/vendor/
+
+# Archivos de configuración de PHP
+*.log
+*.cache
+
+# Archivos de configuración del entorno
+.env
+
+# Directorios de caché y logs
+/cache/
+logs/
+
+# Sistema de operaciones
+.DS_Store
+Thumbs.db
+
+# Archivos de IDEs y editores
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de prueba
+phpunit.xml
+phpunit.xml.dist
+
+# Archivos de backups
+*.bak
+*.swp
+
+# Archivos de prueba
+/tests/output/
