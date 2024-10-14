@@ -34,5 +34,21 @@ class UserController {
             ->withHeader('Content-Type', 'application/json')
             ->withStatus(201);
     }
+    function update(Request $request, Response $response, array $args): Response {
+        $userId = (int)$args['id'];
+        $data = $request->getParsedBody();
+        $user = $this->userService->update($userId, $data);
+        $payload = json_encode($user, JSON_PRETTY_PRINT);
+        $response->getBody()->write($payload);
+        return $response
+            ->withHeader('Content-Type', 'application/json')
+            ->withStatus(200);
+    }
+    function delete(Request $request, Response $response, array $args): Response {
+        $userId = (int)$args['id'];
+        $this->userService->delete($userId);
+        return $response
+            ->withStatus(204);
+    }
         
 }
